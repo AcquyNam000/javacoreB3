@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class main {
+        public static void main(String []arg)
+        {
+                int n = 0;
+                int a = 0;
+                int n2 = 0;
+                Scanner sc = new Scanner(System.in);
+                ArrayList<Integer> array = new ArrayList<>();
+                ArrayList<Integer> array2 = new ArrayList<>();
+                System.out.println("Nhập số phần tử của mảng ");
+                System.out.println("pt ds1:");
+                n = sc.nextInt();
+                System.out.println("pt ds2:");
+                n2 = sc.nextInt();
+
+                for(int i = 0 ; i < n ; i ++)
+                {
+                    System.out.print("nhập phần tử thứ"+ i + ":");
+                    a = sc.nextInt();
+                    array.add(a);
+                }
+                 System.out.println(array);
+
+
+                 System.out.println("Ds2:");
+            for(int i = 0 ; i < n2 ; i ++)
+            {
+                System.out.print("nhập phần tử thứ"+ i + ":");
+                a = sc.nextInt();
+                array2.add(a);
+            }
+            System.out.println(array2);
+
+
+
+                 array.sort(Comparator.comparingInt(o -> (int) o).reversed());
+                 Set<Integer> hashset = new HashSet<>();
+                 System.out.println("kq: ");
+                for(int i = 0 ; i < array.toArray().length ; i ++)
+                {
+                    hashset.add(array.get(i));
+                }
+            for(int i = 0 ; i < array2.toArray().length ; i ++)
+            {
+                hashset.add(array2.get(i));
+            }
+
+//            hashset.sort(Comparator.comparingInt(o -> (int) o).reversed());
+            TreeSet<Integer> tts =  new TreeSet();
+            tts.addAll(hashset);
+                System.out.println(tts);
+
+        }
+
+}
+
+
